@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<body>
+		Full name: <input type="text" id="fullname"><br>
+		Age: <input type="number" id="age" min="1" max="150">
+		<button type="button" onclick="callPost()">Send data</button>
+		<p id="mytext"></p>
+</body>
+</html>
+<script src="axios.min.js"></script> 
+<script>
+function callPost() {
+	var fullnameVar = document.getElementById('fullname').value;
+    var ageVar = document.getElementById('age').value;
+	axios.post('http://localhost:8081', {
+  		fullname: fullnameVar,
+		age: ageVar
+	})
+	axios.post('http://localhost:8081', {
+		fullname: fullnameVar,
+		age: ageVar
+  })
+  .then(function (response) {
+    console.log(response);
+	document.getElementById("mytext").innerHTML = response.data;
+  })
+  .catch(function (error) {
+    console.log(error);
+	document.getElementById("mytext").innerHTML = error.data;
+  });
+}
+</script>

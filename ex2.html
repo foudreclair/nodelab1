@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <h2>Welcome to Ex2 !</h2>
+    <button onclick="myFunction()" id="show">Show me</button>
+    <button onclick="myFunction()" id="hide">Hide me</button>
+            
+</body>
+<script>
+    document.getElementById("hide").style.visibility = "hidden"; 
+    document.getElementById("show").style.visibility = "visible";
+    function myFunction() {
+        if(document.getElementById("show").style.visibility == "visible") {
+            document.getElementById("show").style.visibility = "hidden";
+            document.getElementById("hide").style.visibility = "visible";
+        } else {
+            document.getElementById("show").style.visibility = "visible";
+            document.getElementById("hide").style.visibility = "hidden";
+        }
+    }
+</script>
+</html>

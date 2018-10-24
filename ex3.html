@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html>
+<body>
+    <input type="number" min="0" id="textbox">
+    <button id="myButton" onclick="print(isPrime(document.getElementById('textbox').value))">Next</button>
+    <p id="mytext">Please insert a integer</p>
+</body>
+</html>
+<script>
+    function isPrime(num) {
+        for(var i = 2; i < num; i++)
+            if(num % i === 0) return false;
+                return num !== 1 && num !== 0;
+    }
+    function print(value) {
+        if(value == 1) {
+            document.getElementById("mytext").innerHTML = "it's a prime number !";
+        } else {
+            document.getElementById("mytext").innerHTML = "it's not a prime number !";
+        }
+    }
+</script>
