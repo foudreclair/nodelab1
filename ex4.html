@@ -10,8 +10,12 @@
 <script src="axios.min.js"></script> 
 <script>
 function callPost() {
-	var fullnameVar = document.getElementById('fullname').value;
+	var fullnameVar = document.getElementById('fullname').value.toLowerCase();
     var ageVar = document.getElementById('age').value;
+	if(ageVar == 0 || fullnameVar ==	 null) {
+		document.getElementById("mytext").innerHTML = "Please RTFM";
+
+	} else {
 	axios.post('http://localhost:8081', {
   		fullname: fullnameVar,
 		age: ageVar
@@ -28,5 +32,6 @@ function callPost() {
     console.log(error);
 	document.getElementById("mytext").innerHTML = error.data;
   });
+}
 }
 </script>
